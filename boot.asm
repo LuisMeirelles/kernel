@@ -1,4 +1,4 @@
-ORG 0
+ORG 0x7c00
 BITS 16
 
 _start:
@@ -8,22 +8,18 @@ _start:
 times 33 db 0
 
 start:
-  JMP 0x7c0:step2
+  JMP 0:step2
 
 step2:
   cli
 
-  MOV ax, 0x7c0
+  MOV ax, 0
   MOV ds, ax
   MOV es, ax
-
-  MOV ax, 0
-
   MOV ss, ax
   MOV sp, 0x7c00
 
   sti
-
   cld
 
   MOV si, message
