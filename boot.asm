@@ -1,7 +1,16 @@
 ORG 0
 BITS 16
 
+_start:
+  JMP SHORT start
+  NOP
+
+times 33 db 0
+
 start:
+  JMP 0x7c0:step2
+
+step2:
   cli
 
   MOV ax, 0x7c0
