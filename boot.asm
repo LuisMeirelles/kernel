@@ -97,10 +97,8 @@ DW 0xAA55
 stage2:
   MOV si, message_sector_2
   CALL print
-  
-  .halt:
-    hlt
-    JMP .halt
+
+  JMP halt
 
 message_sector_2: db 'Hello world from stage 2', 0
 
