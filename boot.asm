@@ -1,7 +1,20 @@
-ORG 0x7c00
+ORG 0
 BITS 16
 
 start:
+  cli
+
+  MOV ax, 0x7c0
+  MOV ds, ax
+  MOV es, ax
+
+  MOV ax, 0
+
+  MOV ss, ax
+  MOV sp, 0x7c00
+
+  sti
+
   MOV si, message
   CALL print
 
