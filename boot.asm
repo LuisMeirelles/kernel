@@ -24,10 +24,14 @@ step2:
 
   sti
 
+  cld
+
   MOV si, message
   CALL print
 
-  JMP $
+  .halt:
+    hlt
+    JMP .halt
 
 print:
   MOV bx, 0
